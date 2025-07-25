@@ -7,8 +7,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/id/:slug" element={<ContactCard />} />
-        <Route path="/" element={<Navigate to="/id/eugenio-andreone" replace />} />
-        <Route path="*" element={<Navigate to="/id/eugenio-andreone" replace />} />
+        <Route path="/" element={<Navigate to="/id/luis-mejia" replace />} />
+        <Route path="*" element={<Navigate to="/id/luis-mejia" replace />} />
       </Routes>
     </Router>
   );
