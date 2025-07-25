@@ -34,7 +34,7 @@ export const empleados: Employee[] = [
     photo: 'https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/imagenes/Equipo/Luis.png',
     email: 'luismccoach@gmail.com',
     phone: '+58 412-7224007',
-    whatsapp: '5841272240007',
+    whatsapp: '584127224007',
     linkedin: 'luis-mejia-bb590a223',
     website: 'solware.agency'
   }
