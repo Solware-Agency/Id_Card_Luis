@@ -10,15 +10,50 @@ import { trackEvent } from '../utils/analytics';
 import { TEXT_CONTENT } from '../constants';
 import type { Language } from '../types';
 
-interface ContactCardProps {
-  employeeSlug?: string; // Prop opcional para cuando se pasa desde App.tsx
-}
-
-const ContactCard: React.FC<ContactCardProps> = ({ employeeSlug }) => {
+const ContactCard: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   
-  // Usar el slug pasado como prop o el de la URL
-  const finalSlug = employeeSlug || slug;
+  // Función para obtener el subdominio
+  const getSubdomain = (): string | null => {
+    const hostname = window.location.hostname;
+    const parts = hostname.split('.');
+    
+    // Si es localhost o una IP, no hay subdominio
+    if (hostname === 'localhost' || /^\d+\.\d+\.\d+\.\d+$/.test(hostname)) {
+      return null;
+    }
+    
+    // Si tiene más de 2 partes (ej: luis.solware.agency), el primer elemento es el subdominio
+    if (parts.length > 2) {
+      return parts[0];
+    }
+    
+    return null;
+  };
+
+  // Función para obtener el slug basado en el subdominio
+  const getSlugFromSubdomain = (subdomain: string): string | null => {
+    const subdomainMap: { [key: string]: string } = {
+      'luis': 'luis-mejia'
+      // Agregar más mapeos aquí según sea necesario
+    };
+    
+    return subdomainMap[subdomain.toLowerCase()] || null;
+  };
+
+  // Determinar qué empleado mostrar
+  const subdomain = getSubdomain();
+  let finalSlug = slug;
+  
+  // Si no hay slug en la URL pero hay subdominio, usar el mapeo
+  if (!slug && subdomain) {
+    finalSlug = getSlugFromSubdomain(subdomain);
+  }
+  
+  // Si no hay slug y no hay subdominio, usar por defecto
+  if (!finalSlug) {
+    finalSlug = 'luis-mejia';
+  }
   
   const [language, setLanguage] = useState<Language['code']>('es');
   const employee = finalSlug ? getEmployeeBySlug(finalSlug) : null;
