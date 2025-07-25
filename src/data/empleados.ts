@@ -4,6 +4,7 @@ export const empleados: Employee[] = [
   {
     slug: 'luis-mejia',
     name: 'Luis Mejía',
+    subdomain: 'luis', // Agregar campo de subdominio
     title: {
       en: 'Sales Advisor',
       es: 'Asesor de Ventas'
@@ -12,7 +13,6 @@ export const empleados: Employee[] = [
       en: 'Solware Agency',
       es: 'Agencia Solware'
     },
-    photo: 'https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/imagenes/Equipo/Luis.png',
     photo: 'https://lafysstpyiejevhrlmzc.supabase.co/storage/v1/object/public/imagenes/Equipo/Luis.png',
     phone: '+58 412-7224007',
     whatsapp: '584127224007',
@@ -24,4 +24,8 @@ export const empleados: Employee[] = [
 
 export const getEmployeeBySlug = (slug: string): Employee | undefined => {
   return empleados.find(emp => emp.slug === slug);
+};
+
+export const getEmployeeBySubdomain = (subdomain: string): Employee | undefined => {
+  return empleados.find(emp => emp.subdomain === subdomain);
 };

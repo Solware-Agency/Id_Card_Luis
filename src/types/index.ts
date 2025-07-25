@@ -1,6 +1,7 @@
 export interface Employee {
   slug: string;
   name: string;
+  subdomain?: string; // Campo opcional para el subdominio
   title: {
     en: string;
     es: string;
