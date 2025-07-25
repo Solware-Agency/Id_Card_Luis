@@ -22,7 +22,7 @@ export const empleados: Employee[] = [
   },
   {
     slug: 'luis-mejia',
-    name: 'Luis Mejia',
+    name: 'Luis Mejía',
     title: {
       en: 'Coach & Consultant',
       es: 'Coach y Consultor'
