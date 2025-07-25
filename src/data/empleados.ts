@@ -5,8 +5,8 @@ export const empleados: Employee[] = [
     slug: 'luis-mejia',
     name: 'Luis Mejía',
     title: {
-      en: 'Coach & Consultant',
-      es: 'Coach y Consultor'
+      en: 'Sales Advisor',
+      es: 'Asesor de Ventas'
     },
     company: {
       en: 'Solware Agency',
@@ -17,7 +17,8 @@ export const empleados: Employee[] = [
     phone: '+58 412-7224007',
     whatsapp: '584127224007',
     linkedin: 'luis-mejia-bb590a223',
-    website: 'solware.agency'
+    website: 'solware.agency',
+    calendly: 'https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ28TbL6x8Jj7yLpzgpH2OQ1MV5t5zdvwYRbjCTVKTjj-pNNzSSZ3mGSpguP7Sv4AksuyRdav2bJ'
   }
 ];
 

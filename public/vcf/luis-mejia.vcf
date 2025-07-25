@@ -1,10 +1,11 @@
 BEGIN:VCARD
 VERSION:3.0
 FN:Luis Mejía
+N:Mejía;Luis;;;
 ORG:Agencia Solware
-TITLE:Coach y Consultor
+TITLE:Asesor de Ventas
+TEL;TYPE=CELL:+58 412-7224007
 EMAIL:luismccoach@gmail.com
-TEL:+58 412-7224007
 URL:https://solware.agency
 URL:https://linkedin.com/in/luis-mejia-bb590a223
 END:VCARD
